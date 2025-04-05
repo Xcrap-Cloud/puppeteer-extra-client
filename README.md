@@ -1,6 +1,7 @@
 # 🕷️ Xcrap Extra Puppeteer Client
 
 **Xcrap Puppeteer Extra Client** is an Xcrap framework package that implements an HTTP client using the [Puppeteer Extra](https://www.npmjs.com/package/puppeteer-extra) library.
+
 ## 📦 Installation
 
 For installation, there are no secrets, just use your preferred dependency manager. Here is an example using NPM:
@@ -14,6 +15,7 @@ npm i @xcrap/puppeteer-extra-client @xcrap/core @xcrap/parser
 ## 🚀 Usage
 
 Just like every HTTP client, `PuppteerExtraClient` has two methods: `fetch()` to make a request to a specific URL and `fetchMany()` to make requests to multiple URLs at the same time, being able to control competition and delays between requests.
+
 ### Usage Example
 
 ```ts
@@ -49,6 +51,7 @@ Or if you have previously instantiated a client:
 ```ts
 client.usePlugin(StealthPlugin())
 ```
+
 ### Using Actions
 
 If you want to perform operations on the page before or after requests, you can use the `actions` property, which is an array of functions. Actions are flexible enough that you can do exactly what you would normally do with Puppeteer: login, click buttons, evaluate functions, etc.
@@ -99,6 +102,7 @@ const response = await client.fetch({
 	]
 })
 ```
+
 ### Adding a proxy
 
 In an HTTP client that extends from `BaseClient` we can add a proxy in the constructor as we can see in the following example:
@@ -125,6 +129,7 @@ function randomProxy() {
 
 const client = new PuppteerClient({ proxy: randomProxy })
 ```
+
 ### Using a custom User Agent
 
 In a client that extends `BaseClient` we can also customize the `User-Agent` of requests. We can do this in two ways: 
