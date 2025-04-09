@@ -1,4 +1,4 @@
-# 🕷️ Xcrap Extra Puppeteer Client
+# 🕷️ Xcrap Puppeteer Extra Client
 
 **Xcrap Puppeteer Extra Client** is an Xcrap framework package that implements an HTTP client using the [Puppeteer Extra](https://www.npmjs.com/package/puppeteer-extra) library.
 
