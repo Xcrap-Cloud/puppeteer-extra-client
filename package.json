@@ -33,7 +33,7 @@
     "@xcrap/parser": "*"
   },
   "dependencies": {
-    "@xcrap/puppeteer-client": "^0.0.1",
+    "@xcrap/puppeteer-client": "^0.0.4",
     "puppeteer-extra": "^3.3.6"
   },
   "repository": {
