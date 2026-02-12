@@ -24,17 +24,17 @@
   "license": "MIT",
   "type": "commonjs",
   "devDependencies": {
-    "@types/node": "^22.19.10",
+    "@types/node": "^22.19.11",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
   "peerDependencies": {
-    "@xcrap/core": "^0.2.1",
-    "@xcrap/parser": "^0.1.11"
+    "@xcrap/core": "latest",
+    "@xcrap/extractor": "latest",
+    "@xcrap/puppeteer-client": "latest"
   },
   "dependencies": {
-    "@xcrap/puppeteer-client": "^0.0.4",
-    "puppeteer-extra": "^3.3.6"
+    "puppeteer-extra": "latest"
   },
   "repository": {
     "type": "git",

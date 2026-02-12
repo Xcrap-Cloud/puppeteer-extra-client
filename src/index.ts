@@ -1,13 +1,19 @@
 import { PuppeteerClient, PuppeteerClientOptions } from "@xcrap/puppeteer-client"
-import puppeteer, { PuppeteerExtraPlugin } from "puppeteer-extra"
+import { PuppeteerExtra, PuppeteerExtraPlugin } from "puppeteer-extra"
+
+import { requireVanillaPuppeteer } from "./utils"
 
 export type PuppeteerExtraClientOptions = PuppeteerClientOptions & {
     plugins?: PuppeteerExtraPlugin[]
 }
 
 export class PuppeteerExtraClient extends PuppeteerClient {
+    readonly puppeteer: PuppeteerExtra
+
     constructor(options: PuppeteerExtraClientOptions = {}) {
         super(options)
+
+        this.puppeteer = new PuppeteerExtra(...requireVanillaPuppeteer())
 
         if (options.plugins) {
             for (const plugin of options.plugins) {
@@ -31,7 +37,7 @@ export class PuppeteerExtraClient extends PuppeteerClient {
             puppeteerArguments.push(...this.options.args)
         }
 
-        this.browser = await puppeteer.launch({
+        this.browser = await this.puppeteer.launch({
             ...this.options,
             args: puppeteerArguments,
             headless: this.options.headless,
@@ -39,6 +45,6 @@ export class PuppeteerExtraClient extends PuppeteerClient {
     }
 
     usePlugin(plugin: PuppeteerExtraPlugin): void {
-        puppeteer.use(plugin)
+        this.puppeteer.use(plugin)
     }
 }
