@@ -1,6 +1,6 @@
 {
   "name": "@xcrap/puppeteer-extra-client",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Xcrap Puppeteer Extra Client is a package of the Xcrap framework that implements an HTTP client using the Puppeteer Extra library.",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
